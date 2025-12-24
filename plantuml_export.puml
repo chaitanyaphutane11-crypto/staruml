@@ -1,0 +1,43 @@
+@startuml
+allowmixing
+
+' ===========================
+' CLASS DIAGRAM SECTION
+' ===========================
+
+package "Angular Client" {
+  class AppComponent {
+    + loadUsersHttp(): void
+    + addUserHttp(): void
+  }
+  class GqlService {
+    + executeHttp(op: Operation): Observable<any>
+  }
+  AppComponent --> GqlService
+}
+
+package ".NET Server" {
+  class GraphQLController {
+    + Execute(op: OperationDto): IActionResult
+  }
+  class DummyDbServer {
+    + Users: DummyCollectionServer<UserModel>
+  }
+  GraphQLController --> DummyDbServer
+}
+
+' ===========================
+' SEQUENCE DIAGRAM SECTION
+' ===========================
+
+actor UserClient
+UserClient -> AppComponent: click "Add User"
+AppComponent -> GqlService: executeHttp(addUser)
+GqlService -> GraphQLController: POST /graphql
+GraphQLController -> DummyDbServer: Insert UserModel
+DummyDbServer --> GraphQLController: return UserModel
+GraphQLController --> GqlService: JSON { data: { addUser } }
+GqlService --> AppComponent: Observable result
+AppComponent --> UserClient: UI updates
+
+@enduml

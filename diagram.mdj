@@ -1,0 +1,214 @@
+{
+  "_type": "Project",
+  "_id": "ac97b4f8-1058-486c-a403-1409d0a1d476",
+  "name": "ConvertedProject",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "MODEL1",
+      "name": "Main",
+      "ownedElements": [
+        {
+          "_type": "UMLClass",
+          "_id": "7891bb96-36d4-4d26-8d6f-086b01f9314a",
+          "name": "Observable<T>",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "3c210ab3-a1af-4de8-bdc9-22017e53cf9f",
+              "name": "subscribe(observer: Observer<T>)",
+              "_parent": {
+                "$ref": "7891bb96-36d4-4d26-8d6f-086b01f9314a"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "6b071abf-6c17-4c70-b6b7-3a47f8ed6a99",
+          "name": "Functor<T>",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "b881df1c-435e-4426-b5d8-2e86261e999b",
+              "name": "map(func: Function)",
+              "_parent": {
+                "$ref": "6b071abf-6c17-4c70-b6b7-3a47f8ed6a99"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "3791286b-1c98-41da-aea8-bd99eaf4a7bb",
+          "name": "ForkJoin",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "58ab01df-8027-4d02-8492-8d23eb49864d",
+              "name": "forkJoin(sources: Observable<T>[]): Observable<T[]>",
+              "_parent": {
+                "$ref": "3791286b-1c98-41da-aea8-bd99eaf4a7bb"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "93dd6ddb-7740-4fd7-a397-ae6c7732f9f8",
+          "name": "Zip",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "bcba9e53-1e1e-40a3-9868-1510f712e9b6",
+              "name": "zip(sources: Observable<T>[]): Observable<T[]>",
+              "_parent": {
+                "$ref": "93dd6ddb-7740-4fd7-a397-ae6c7732f9f8"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "0ae2f9fd-d888-487d-a8ef-b82f2083c766",
+          "name": "CombineLatest",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "bd804575-a139-48b0-b661-7b93456b9aab",
+              "name": "combineLatest(sources: Observable<T>[]): Observable<T[]>",
+              "_parent": {
+                "$ref": "0ae2f9fd-d888-487d-a8ef-b82f2083c766"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClassDiagram",
+          "_id": "DIAG1",
+          "name": "GeneratedDiagram",
+          "_parent": {
+            "$ref": "MODEL1"
+          },
+          "ownedViews": [
+            {
+              "_type": "UMLClassView",
+              "_id": "0b19ea0e-fca2-41bd-9a92-948f36ae6007",
+              "model": {
+                "$ref": "7891bb96-36d4-4d26-8d6f-086b01f9314a"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 120,
+                "y": 120,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "39bd0438-108a-42cb-9e4a-8e6d1d741fdb",
+              "model": {
+                "$ref": "6b071abf-6c17-4c70-b6b7-3a47f8ed6a99"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 380,
+                "y": 120,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "39fe6167-a8bf-4848-8750-243e61a42d88",
+              "model": {
+                "$ref": "3791286b-1c98-41da-aea8-bd99eaf4a7bb"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 640,
+                "y": 120,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "cd33117d-2e7b-42ab-addd-8eaf6bd73882",
+              "model": {
+                "$ref": "93dd6ddb-7740-4fd7-a397-ae6c7732f9f8"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 120,
+                "y": 320,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "df5c3ee4-5488-454a-bec6-0b6a1b3e07da",
+              "model": {
+                "$ref": "0ae2f9fd-d888-487d-a8ef-b82f2083c766"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 380,
+                "y": 320,
+                "width": 200,
+                "height": 140
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

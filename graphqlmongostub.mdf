@@ -1,0 +1,435 @@
+{
+  "_type": "Project",
+  "_id": "2ad992c7-1ae6-47aa-b413-1653169cfcd5",
+  "name": "ConvertedProject",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "MODEL1",
+      "name": "Main",
+      "ownedElements": [
+        {
+          "_type": "UMLClass",
+          "_id": "90d98f1b-a841-4026-8b06-292af0e1210e",
+          "name": "AppComponent",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "f650e9bd-df11-4347-9ffd-8509530012ee",
+              "name": "loadUsersHttp(): void",
+              "_parent": {
+                "$ref": "90d98f1b-a841-4026-8b06-292af0e1210e"
+              }
+            },
+            {
+              "_type": "UMLOperation",
+              "_id": "6f4e6715-f2a3-4edb-8341-3b0bd0cde999",
+              "name": "addUserHttp(): void",
+              "_parent": {
+                "$ref": "90d98f1b-a841-4026-8b06-292af0e1210e"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "f7b15421-75aa-43d5-9fbc-1cba09a5480c",
+          "name": "GqlService",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "10a162f2-5417-418b-aff0-9d5209baa513",
+              "name": "executeHttp(op: Operation): Observable<any>",
+              "_parent": {
+                "$ref": "f7b15421-75aa-43d5-9fbc-1cba09a5480c"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "f498e3df-d233-4471-acc4-9975882ea438",
+          "name": "GraphQLController",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "4932a26a-621f-47a7-a93b-59a1d4d037a8",
+              "name": "Execute(op: OperationDto): IActionResult",
+              "_parent": {
+                "$ref": "f498e3df-d233-4471-acc4-9975882ea438"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "e9f876d4-46a8-4aae-bb42-c7bce45fdf4d",
+          "name": "DummyDbServer",
+          "attributes": [],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "_id": "b4262be7-2aba-4925-87a2-18902504a6bb",
+              "name": "Users: DummyCollectionServer<UserModel>",
+              "_parent": {
+                "$ref": "e9f876d4-46a8-4aae-bb42-c7bce45fdf4d"
+              }
+            }
+          ],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "46a0c239-3c4f-4b16-bce0-18034683d213",
+          "name": "UserClient",
+          "attributes": [],
+          "operations": [],
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "95452467-6f2e-43ef-ad67-e5f43b6bd276",
+          "end1": {
+            "reference": {
+              "$ref": "90d98f1b-a841-4026-8b06-292af0e1210e"
+            },
+            "name": "}"
+          },
+          "end2": {
+            "reference": {
+              "$ref": "f7b15421-75aa-43d5-9fbc-1cba09a5480c"
+            }
+          },
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "000a94a0-2c64-4449-b9d5-c3c112eaf6d9",
+          "end1": {
+            "reference": {
+              "$ref": "f498e3df-d233-4471-acc4-9975882ea438"
+            },
+            "name": "}"
+          },
+          "end2": {
+            "reference": {
+              "$ref": "e9f876d4-46a8-4aae-bb42-c7bce45fdf4d"
+            }
+          },
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "1d8be587-4ac1-47e9-9ed0-32019f6a3207",
+          "end1": {
+            "reference": {
+              "$ref": "e9f876d4-46a8-4aae-bb42-c7bce45fdf4d"
+            },
+            "name": "return UserModel"
+          },
+          "end2": {
+            "reference": {
+              "$ref": "f498e3df-d233-4471-acc4-9975882ea438"
+            }
+          },
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "5a77dcd7-3a8f-418a-935a-76dcc4797392",
+          "end1": {
+            "reference": {
+              "$ref": "f498e3df-d233-4471-acc4-9975882ea438"
+            },
+            "name": "JSON { data: { addUser } }"
+          },
+          "end2": {
+            "reference": {
+              "$ref": "f7b15421-75aa-43d5-9fbc-1cba09a5480c"
+            }
+          },
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "d1f6c5e7-2da2-4430-96c1-79ef5ed59dca",
+          "end1": {
+            "reference": {
+              "$ref": "f7b15421-75aa-43d5-9fbc-1cba09a5480c"
+            },
+            "name": "Observable result"
+          },
+          "end2": {
+            "reference": {
+              "$ref": "90d98f1b-a841-4026-8b06-292af0e1210e"
+            }
+          },
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "e8067f1a-0f7f-4a84-84aa-276a562af142",
+          "end1": {
+            "reference": {
+              "$ref": "90d98f1b-a841-4026-8b06-292af0e1210e"
+            },
+            "name": "UI updates"
+          },
+          "end2": {
+            "reference": {
+              "$ref": "46a0c239-3c4f-4b16-bce0-18034683d213"
+            }
+          },
+          "_parent": {
+            "$ref": "MODEL1"
+          }
+        },
+        {
+          "_type": "UMLClassDiagram",
+          "_id": "DIAG1",
+          "name": "GeneratedDiagram",
+          "_parent": {
+            "$ref": "MODEL1"
+          },
+          "ownedViews": [
+            {
+              "_type": "UMLClassView",
+              "_id": "2cb10ab7-3542-4012-8ba9-8e0202d4b601",
+              "model": {
+                "$ref": "90d98f1b-a841-4026-8b06-292af0e1210e"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 120,
+                "y": 120,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "bb228237-2172-4500-bb68-ae37cfbd0cc9",
+              "model": {
+                "$ref": "f7b15421-75aa-43d5-9fbc-1cba09a5480c"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 380,
+                "y": 120,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "d8afbac6-55bf-4f5c-b20c-f988394eb241",
+              "model": {
+                "$ref": "f498e3df-d233-4471-acc4-9975882ea438"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 640,
+                "y": 120,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "192843e1-bd7d-48aa-a363-00a01dc7dc9e",
+              "model": {
+                "$ref": "e9f876d4-46a8-4aae-bb42-c7bce45fdf4d"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 120,
+                "y": 320,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "1f5e064e-8644-4be8-8241-6e92ab9152d3",
+              "model": {
+                "$ref": "46a0c239-3c4f-4b16-bce0-18034683d213"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "bounds": {
+                "x": 380,
+                "y": 320,
+                "width": 200,
+                "height": 140
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "7fd7b8a7-d115-494d-a152-153541117299",
+              "model": {
+                "$ref": "95452467-6f2e-43ef-ad67-e5f43b6bd276"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "head": {
+                "$ref": "bb228237-2172-4500-bb68-ae37cfbd0cc9"
+              },
+              "tail": {
+                "$ref": "2cb10ab7-3542-4012-8ba9-8e0202d4b601"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "dd030da9-6fce-4a2b-9082-9f81c48d2a50",
+              "model": {
+                "$ref": "000a94a0-2c64-4449-b9d5-c3c112eaf6d9"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "head": {
+                "$ref": "192843e1-bd7d-48aa-a363-00a01dc7dc9e"
+              },
+              "tail": {
+                "$ref": "d8afbac6-55bf-4f5c-b20c-f988394eb241"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "8bda6ae7-195f-4ac0-9add-700af0b42af0",
+              "model": {
+                "$ref": "1d8be587-4ac1-47e9-9ed0-32019f6a3207"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "head": {
+                "$ref": "d8afbac6-55bf-4f5c-b20c-f988394eb241"
+              },
+              "tail": {
+                "$ref": "192843e1-bd7d-48aa-a363-00a01dc7dc9e"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "48db4efb-3336-4ed9-9a4c-ea6220523dd4",
+              "model": {
+                "$ref": "5a77dcd7-3a8f-418a-935a-76dcc4797392"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "head": {
+                "$ref": "bb228237-2172-4500-bb68-ae37cfbd0cc9"
+              },
+              "tail": {
+                "$ref": "d8afbac6-55bf-4f5c-b20c-f988394eb241"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "ade93f78-e963-4c62-991c-46eb3ff374f4",
+              "model": {
+                "$ref": "d1f6c5e7-2da2-4430-96c1-79ef5ed59dca"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "head": {
+                "$ref": "2cb10ab7-3542-4012-8ba9-8e0202d4b601"
+              },
+              "tail": {
+                "$ref": "bb228237-2172-4500-bb68-ae37cfbd0cc9"
+              }
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "c90ad9ef-7e97-48f0-a46c-c462c80e1145",
+              "model": {
+                "$ref": "e8067f1a-0f7f-4a84-84aa-276a562af142"
+              },
+              "_parent": {
+                "$ref": "DIAG1"
+              },
+              "containerView": {
+                "$ref": "DIAG1"
+              },
+              "head": {
+                "$ref": "1f5e064e-8644-4be8-8241-6e92ab9152d3"
+              },
+              "tail": {
+                "$ref": "2cb10ab7-3542-4012-8ba9-8e0202d4b601"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
