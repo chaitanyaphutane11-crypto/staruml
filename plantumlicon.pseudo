@@ -1,0 +1,47 @@
+// --- DATA SETUP ---
+// Literal newline variable to ensure 0a is generated
+set NL = "
+" 
+set input_code = "@startuml" + NL + "Alice -> Bob: Hello" + NL + "@enduml"
+
+set hex_map = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+
+// Map carefully aligned to ASCII offsets
+// Index 1 = Space (32), Index 27 = : (58), Index 31 = > (62), Index 33 = @ (64)
+set val_map = [" ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/","0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","[","\\","]","^","_","`","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+set hex_result = ""
+set i = 1
+
+WHILE i <= length(input_code)
+    set current_char = input_code[i]
+    set char_val = 0
+    
+    // Check for Newline (ASCII 10)
+    IF current_char == NL
+        set char_val = 10
+    ELSE
+        set k = 1
+        WHILE k <= length(val_map)
+            IF val_map[k] == current_char
+                set char_val = k + 31
+                set k = 999
+            ENDIF
+            set k = k + 1
+        ENDWHILE
+    ENDIF
+
+    // Integer Division via Subtraction
+    set temp = char_val
+    set high = 0
+    WHILE temp >= 16
+        set temp = temp - 16
+        set high = high + 1
+    ENDWHILE
+    
+    // Map to hex string
+    set hex_result = hex_result + hex_map[high + 1] + hex_map[temp + 1]
+    set i = i + 1
+ENDWHILE
+
+OUTPUT hex_result
